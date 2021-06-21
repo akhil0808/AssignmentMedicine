@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="medicinemodel"
+            type="com.delight.assignment.database.Medicine" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        >
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:id="@+id/row_single_type1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:fontFamily="@font/opensans_semibold"
+        tools:text="T"
+        android:background="@drawable/circle"
+        android:padding="10dp"
+        android:gravity="center"
+        />
+
+
+    <TextView
+        android:id="@+id/row_single_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/row_single_type1"
+        app:layout_constraintEnd_toStartOf="@+id/row_single_cart_layout1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:text="@{medicinemodel.name}"
+        android:ellipsize="end"
+        android:maxLines="1"
+        tools:text="Medicine Name Medicine Name Medicine Name fsdfsdfs"
+        android:textColor="@color/textcolor"
+        android:textSize="14sp"
+        android:fontFamily="@font/opensans_semibold"
+        />
+
+    <TextView
+        android:id="@+id/row_single_company"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/row_single_type1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/row_single_cart_layout1"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@{medicinemodel.company}"
+        tools:text="Medicine Name"
+        android:textColor="@color/textcolor"
+        android:textSize="14sp"
+        android:fontFamily="@font/opensans_regular"
+        />
+<RelativeLayout
+    android:id="@+id/row_single_cart_layout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:id="@+id/row_single_cart_layout"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+         android:background="@color/green"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        >
+        <TextView
+            android:id="@+id/row_single_cart_decrease"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="-"
+            android:fontFamily="@font/opensans_regular"
+            android:textColor="@color/white"
+            android:textSize="12sp"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey_light" />
+
+
+        <TextView
+            android:id="@+id/row_single_cart_item_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:fontFamily="@font/opensans_regular"
+            android:text='@{medicinemodel.quantity+""}'
+            android:textColor="@color/textcolorheading"
+            android:textSize="12sp"
+            />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey_light" />
+
+
+        <TextView
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/row_single_cart_increase"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_regular"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/row_single_cart_add"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        android:background="@color/green"
+        android:gravity="center"
+        android:text='Add Item +1'
+        android:textColor="@color/white"
+        android:fontFamily="@font/opensans_bold"
+        android:visibility="gone"
+        android:textSize="12sp"/>
+
+
+</RelativeLayout>
+
+
+
+
+
+    <!--<TextView
+        android:id="@+id/row_single_company"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/row_single_medicine_type_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/row_single_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@{medicinemodel.company}"
+        tools:text="Medicine Name"
+        android:textColor="@color/textcolor"
+        android:textSize="12sp"
+        android:fontFamily="@font/opensans_light"
+        />
+-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
