@@ -8,6 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.delight.assignment.databinding.ActivityMainBinding
+import com.delight.assignment.utils.UtilityHelper.isConnectionAvailable
 
 class MainActivity : BaseActivity() {
 
@@ -30,12 +31,12 @@ class MainActivity : BaseActivity() {
                 R.id.homeFragment -> {
 
                     binding.mainToolbarBack.visibility= View.GONE
-                    binding.mainToolbarText.text= "List of Medicines"
+                    binding.mainToolbarText.text= resources.getString(R.string.home_list)
 
                 }
                 R.id.prescriptionFragment->{
                     binding.mainToolbarBack.visibility= View.VISIBLE
-                    binding.mainToolbarText.text= "Prescription Pad"
+                    binding.mainToolbarText.text=  resources.getString(R.string.home_prescription_pad)
 
 
                 }

@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Assignment</string>
+    <string name="app_name">Assignment </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_list">List of Medicines</string>
+    <string name="home_prescription_pad">Prescription Pad</string>
 </resources>

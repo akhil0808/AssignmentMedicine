@@ -12,13 +12,11 @@ import com.delight.assignment.utils.UtilityHelper
 abstract class BaseActivity : AppCompatActivity() {
 
     private lateinit var mProgressDialog: Dialog
-   // private lateinit var toolbarViewModel: ToolbarViewModel
     private lateinit var baseViewModel: BaseViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         baseViewModel = ViewModelProvider(this).get(BaseViewModel::class.java)
-     //   toolbarViewModel = ViewModelProviders.of(this).get(ToolbarViewModel::class.java)
     }
 
     /**

@@ -12,8 +12,6 @@ interface MedicineDao {
     @Update
     fun updateMedicine(cart: Medicine)
 
-    /*  @Delete
-      fun deleteCart(cart: Cart)*/
 
     @Query("SELECT * FROM Medicines WHERE pid==:id")
     fun getSingleMedicine(id: Int): Medicine
